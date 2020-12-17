@@ -33,6 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             "5 * 3 = \(m.multiply(3))",
         ].joined(separator: "\n")
         */
+        label.stringValue = "5^2 = \(square(5))"
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
