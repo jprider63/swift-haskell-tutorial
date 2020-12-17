@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var label: NSTextField!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        /*
         let bytes: [UInt8] = [1, 2, 3, 2, 1, 2]
         callbackExample { n in
             print(n)
@@ -31,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             "Context callback returned \(callbackResult)",
             "5 * 3 = \(m.multiply(3))",
         ].joined(separator: "\n")
+        */
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -63,13 +65,16 @@ func getSequence() -> [UInt8] {
 // Swift to Haskell Callback Example
 
 func callbackExample(f: (@convention(c) (CInt) -> Void)) {
+    /*
     let hsf = unsafeBitCast(f, to: HsFunPtr.self)
     SwiftHaskell.callbackExample(hsf)
+    */
 }
 
 // Swift to Haskell Callback with Context Example
 
 func contextCallbackExample(f: ((CInt) -> Void)) {
+    /*
     class Wrap<T> {
         var inner: T
 
@@ -92,6 +97,7 @@ func contextCallbackExample(f: ((CInt) -> Void)) {
         call as @convention(c) (HsPtr, CInt) -> Void, to: HsFunPtr.self)
     let ctx = Unmanaged.passRetained(Wrap(f)).toOpaque()
     SwiftHaskell.contextCallbackExample(ctx, release_hs, call_hs)
+    */
 }
 
 // Swift to Haskell Function Example
